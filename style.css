@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    background: #ECE9E6;
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+}
+
+.mobile-container {
+    background-color: white;
+    width: 400px;
+    box-shadow: 0 0 5px #3333331a;
+    /* Özel bir shadow rengi */
+    width: 400px;
+    border-radius: 3px;
+    overflow: hidden;
+    /*Containerdan taşanı saklayacak */
+    
+}
+
+header {
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+header input {
+    background-color: #eeeeeebb;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 3px;
+    font-family: inherit;
+}
+
+header button {
+    background-color: transparent;
+    border: none;
+    color: #eee;
+    font-size: 1.5rem;
+    margin-left: 10px;
+}
+
+.fav-container {
+    background-color: rgb(115, 193, 238);
+    padding: 0.25rem 1rem;
+    text-align: center;
+}
+
+.fav-meals{
+    flex-wrap: wrap;
+    /* overflow: auto;/
+    /* Kaydırma barı açıyo menüde */
+    display: flex;
+    /* align-items: center; AÇINCA HER ŞEY KAYIYOR*/
+    justify-content: center;
+    padding: 0;
+    list-style-type: none;
+}
+
+.fav-meals li{
+    position: relative;
+    /* Yeni eklediğim butonun sağ üst köşeye çıkması için */
+    margin: 3px;
+    width: 85px;
+}
+
+.fav-meals li .clear {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    opacity: 0;
+    top: -0.5rem;
+    right: -0.5rem;
+    font-size: 1.2rem;
+}
+
+.fav-meals li:hover .clear {
+    opacity: 1;
+}
+
+.fav-meals li img{
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 5px #3333331a;
+    border-radius: 50%;
+    object-fit: cover;
+    height: 70px;
+    width: 70px;
+    /* Liste içindeki imagelar üzerinde oynama */
+}
+
+.fav-meals li span {
+    display: inline-block;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis ;
+    width: 75px;
+    /* Liste yazılarını sığdırabilmek için içini düzenledik */
+}
+
+
+.meal {
+    border-radius: 3px;
+    box-shadow: 0 0 10px 2px #3333331a;
+    margin: 1.5rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.meal-header {
+    position: relative;
+}
+
+.meal-header .random {
+    position: absolute;
+    top: 1rem;
+    background-color: white;
+    padding: 0.25rem 1rem;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.meal-header img {
+    object-fit: cover;
+    width: 100%;
+    height: 250px;
+
+    
+}
+
+.meal-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* jcsb kısaltması ile yazdım */
+    padding: 1rem;
+}
+
+.meal-body h4 {
+    margin: 0;
+}
+
+.meal-body .fav-btn {
+    border: none;
+    color: rgb(158, 158, 158);
+    background-color: transparent;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.meal-body .fav-btn.active {
+    color: rebeccapurple;
+}
+
+.popup-container {
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.popup-container.hidden {
+    opacity: 0;
+    pointer-events: none;
+    /* Arkasına tıklayabilmem için */
+}
+
+.popup {
+    background-color: white;
+    position: relative;
+    border-radius: 2rem;
+    padding: 0 2rem;
+    max-height: 100vh;
+    max-width: 600px;
+    overflow: auto;
+    width: 100%;
+
+}
+
+.meal-info h1 {
+    text-align:  center;
+}
+
+.popup .close-popup {
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border: none;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    /* İkonu container içinde sağ üste koyduk container içinde kalması için absolute positionladım */
+}
+
+.popup #close-popup:hover {
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
